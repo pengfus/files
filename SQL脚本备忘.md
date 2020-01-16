@@ -18,7 +18,7 @@ where bn in ('991901000005')
 select *
 from bbg_plat_log.sdb_sc_op_log
 where bn = '991901000005'
-  and warehouse_id = 63683;
+  and warehouse_id in (select id from bbg_plat_sc.sdb_sc_warehouse where shop_id = '13207') 
 ```
 
 
