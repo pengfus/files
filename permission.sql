@@ -24,7 +24,7 @@ from o2o.sys_role_menu t
          left join o2o.sys_role r on r.role_id = t.role_id
          left join o2o.o2o_erp_sys_organize o on o.dept_id = r.dept_id
 where r.role_name = '门店店长'
-  and o.organize_code = 'A1A66';
+  and o.organize_code = 'A1A15';
 
 -- 副店长
 insert into o2o.sys_role_menu (role_id, menu_id)
@@ -39,7 +39,7 @@ from o2o.sys_role_menu t
          left join o2o.sys_role r on r.role_id = t.role_id
          left join o2o.o2o_erp_sys_organize o on o.dept_id = r.dept_id
 where r.role_name = '门店高级店务员'
-  and o.organize_code = 'A1A66';
+  and o.organize_code = 'A1A15';
 
 -- 高级店员
 insert into o2o.sys_role_menu (role_id, menu_id)
@@ -54,7 +54,7 @@ from o2o.sys_role_menu t
          left join o2o.sys_role r on r.role_id = t.role_id
          left join o2o.o2o_erp_sys_organize o on o.dept_id = r.dept_id
 where r.role_name = '门店高级店务员'
-  and o.organize_code = 'A1A66';
+  and o.organize_code = 'A1A15';
 
 
 -- 中级店员
@@ -70,7 +70,7 @@ from o2o.sys_role_menu t
          left join o2o.sys_role r on r.role_id = t.role_id
          left join o2o.o2o_erp_sys_organize o on o.dept_id = r.dept_id
 where r.role_name = '门店店务员'
-  and o.organize_code = 'A1A66';
+  and o.organize_code = 'A1A15';
 
 -- 初级店员
 insert into o2o.sys_role_menu (role_id, menu_id)
@@ -85,7 +85,7 @@ from o2o.sys_role_menu t
          left join o2o.sys_role r on r.role_id = t.role_id
          left join o2o.o2o_erp_sys_organize o on o.dept_id = r.dept_id
 where r.role_name = '门店店务员'
-  and o.organize_code = 'A1A66';
+  and o.organize_code = 'A1A15';
 
 
 -- 重置帐号角色
