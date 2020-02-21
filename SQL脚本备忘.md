@@ -15,10 +15,11 @@ where bn in ('991901000005')
 - 库存中心库存操作日志
 
 ```sql
-select *
+select op_desc, nums, current_store, current_freez, order_id, create_time, o2o_order_id
 from bbg_plat_log.sdb_sc_op_log
-where bn = '991901000005'
-  and warehouse_id in (select id from bbg_plat_sc.sdb_sc_warehouse where shop_id = '13207') 
+where bn = '992002000019'
+  and warehouse_id in (select id from bbg_plat_sc.sdb_sc_warehouse where shop_id = '13140')
+order by create_time desc;
 ```
 
 
