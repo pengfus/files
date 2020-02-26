@@ -13,20 +13,22 @@ alter table o2o.sys_user
 alter table o2o.sys_user_token
     add column secondary_status tinyint default 0 comment '二次验证状态，0:未验证，1:已验证';
 
+
 create table sys_user_device
 (
-    id            bigint      not null auto_increment comment '主键ID',
-    device_serial varchar(60) not null comment '设备号',
-    user_id       bigint      not null comment '用户ID',
-    create_time   datetime    not null default CURRENT_TIMESTAMP comment '创建时间',
-    primary key (id)
+   id                   bigint not null auto_increment comment '主键ID',
+   device_serial        varchar(60) not null comment '设备号',
+   user_id              bigint not null comment '用户ID',
+   create_time          datetime not null default CURRENT_TIMESTAMP comment '创建时间',
+   del_flag             tinyint not null default 0 comment '删除标志',
+   primary key (id)
 );
 
-alter table sys_user_device
-    comment '用户登录设备';
+alter table sys_user_device comment '用户登录设备';
+
 
 create unique index u_idx_device_serial on sys_user_device
-    (
-     device_serial
-        );
+(
+   device_serial
+);
 
