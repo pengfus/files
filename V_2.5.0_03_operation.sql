@@ -2,35 +2,6 @@ create database oao_operation;
 
 use oao_operation;
 
-create table o2o_sale_split
-(
-    id            bigint(32) auto_increment comment 'id'
-        primary key,
-    organize_code varchar(255)  null comment '组织机构编码',
-    order_type    int           null comment '订单类型 0自助购 1三公里 2到店提 3快递 4自助收银机 5人工收银机 6外卖订单 8批发销售订单',
-    delivery_type int           null,
-    channel_type  int           null,
-    date          date          null comment '销售日',
-    time_idx      int           null comment '1-48,00:00-00:30为1,23:30-00:00为48',
-    start_time    time          null comment '销售开始时间(开始-结束：半小时)',
-    end_time      time          null comment '销售结束时间',
-    income        int default 0 null comment '营业额，单位分',
-    refund        int default 0 null comment '退款，单位分',
-    total         int default 0 null comment '合计,单位分',
-    constraint organize_code_date_time_idx
-        unique (organize_code, date, time_idx)
-)
-    comment '销售额，维度每半小时';
-
-create index date_start_time_end_time
-    on o2o_sale_split (date, start_time, end_time);
-
-create index date_time_idx
-    on o2o_sale_split (date, time_idx);
-
-create index organize_code
-    on o2o_sale_split (organize_code);
-
 create table plan_range
 (
     id            int auto_increment comment 'id'
@@ -59,7 +30,7 @@ create table plan_workforce
     end_date      date                                 null comment '结束日期',
     day           int                                  null comment '日期长度',
     range_list    text                                 null comment '格式:[rangeId1,rangeId2]',
-    status        int        default 0                 null comment '状态：0草稿，1发布',
+    status        int        default 0                 null comment '状态：0草稿，1发布，-1过期',
     deleted       tinyint(1) default 0                 not null comment '删除标识，1：删除，0：未删',
     creator       bigint                               not null,
     create_time   datetime   default CURRENT_TIMESTAMP not null,
@@ -84,6 +55,9 @@ create table plan_workforce_month
 )
     comment '周数，为了索引';
 
+create index y_m
+    on plan_workforce_month (y_m);
+
 create table plan_workforce_sale
 (
     id            int auto_increment comment 'id'
@@ -106,31 +80,11 @@ create table plan_workforce_sale
 )
     comment '排班销售报表(排班当天变更,需要重新计算当天销售金额)';
 
-create table plan_workforce_salevolumn
-(
-    id            int auto_increment comment 'id'
-        primary key,
-    organize_code varchar(20)                          not null comment '组织机构编号',
-    user_id       int(1)                               null comment '用户id',
-    date          date                                 null comment '日期',
-    range_id      int                                  not null comment 'range_id',
-    sale          int                                  null comment '销售额，单位分',
-    deleted       tinyint(1) default 0                 not null comment '删除标识，1：删除，0：未删',
-    creator       bigint                               not null,
-    create_time   datetime   default CURRENT_TIMESTAMP not null,
-    updator       bigint                               not null,
-    update_time   datetime   default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP
-)
-    comment '排班销售报表(排班当天变更,需要重新计算当天销售金额)';
+create index organize_code
+    on plan_workforce_sale (organize_code);
 
-create table plan_workforce_week
-(
-    id           int auto_increment comment 'id'
-        primary key,
-    workforce_id int not null comment '排班id',
-    week         int not null comment '第几周'
-)
-    comment '周数，为了索引';
+create index start_date_end_date
+    on plan_workforce_sale (start_date, end_date);
 
 create table store_material
 (
