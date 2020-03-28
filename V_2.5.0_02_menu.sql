@@ -37,13 +37,9 @@ insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, orde
 
 
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (793, 524, '任务收集', '', null, 1, null, 7, 0, 'APP_MENU_OPERATION_TASK', null, null, 'o2o');
-insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (792, 524, '排班管理', '', null, 1, null, 6, 0, 'APP_MENU_RANGE', null, null, 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (791, 766, '删除', null, 'sysresponsibility:delete', 2, null, 0, 1, null, null, null, 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (790, 766, '新增/编辑', null, 'sysresponsibility:saveOrUpdate', 2, null, 0, 1, null, null, '新增/编辑', 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (789, 766, '查询', null, 'sysresponsibility:list', 2, null, 0, 1, null, null, null, 'o2o');
-insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (788, 554, '排班销售报表', 'modules/operationManage/workforceReport.html', null, 1, null, 12, 1, null, null, null, 'o2o');
-insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (787, 554, '排班管理', 'modules/operationManage/workforceManage.html', null, 1, null, 11, 1, null, null, null, 'o2o');
-insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (786, 554, '班次管理', 'modules/operationManage/classesManage.html', null, 1, null, 10, 1, null, null, null, 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (784, 768, '查询', null, 'staff:query', 2, null, 0, 1, null, null, null, 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (783, 768, '修改', null, 'staff:edit', 2, null, 0, 1, null, null, null, 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (782, 768, '分配店铺职能', null, 'staff:distribution', 2, null, 0, 1, null, null, null, 'o2o');
@@ -85,13 +81,9 @@ insert into o2o.sys_role_menu (menu_id,role_id) values (796,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (795,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (794,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (793,1);
-insert into o2o.sys_role_menu (menu_id,role_id) values (792,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (791,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (790,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (789,1);
-insert into o2o.sys_role_menu (menu_id,role_id) values (788,1);
-insert into o2o.sys_role_menu (menu_id,role_id) values (787,1);
-insert into o2o.sys_role_menu (menu_id,role_id) values (786,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (784,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (783,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (782,1);
@@ -103,6 +95,47 @@ insert into o2o.sys_role_menu (menu_id,role_id) values (770,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (769,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (768,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (766,1);
+
+
+
+-- 排班
+
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (686, 554, '班次管理', 'modules/operationManage/classesManage.html', NULL, 1, NULL, 10, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (687, 554, '排班管理', 'modules/operationManage/workforceManage.html', NULL, 1, NULL, 11, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (688, 554, '排班销售报表', 'modules/operationManage/workforceReport.html', NULL, 1, NULL, 12, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (692, 524, '排班管理', '', NULL, 1, NULL, 6, 0, 'APP_MENU_RANGE', NULL, NULL, 'o2o');
+
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES (1, 686);
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES (1, 687);
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES (1, 688);
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES (1, 692);
+
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (719, 686, '查看', NULL, 'operation:range:pages', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (720, 686, '新增', NULL, 'operation:range:save', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (721, 686, '修改', NULL, 'operation:range:update', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (722, 686, '删除', NULL, 'operation:range:del', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (723, 686, '导出', NULL, 'operation:range:exportExcel', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (724, 687, '查看', NULL, 'operation:workforce:pages', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (725, 687, '排班配置', NULL, 'operation:workforce:setWorkforceConfig', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (726, 687, '调整当前周期排班', NULL, 'operation:workforce:current', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (727, 687, '提交下一周期排班', NULL, 'operation:workforce:next', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (728, 687, '导出排班表', NULL, 'operation:workforce:exportExcel', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (729, 688, '查看', NULL, 'operation:workforceSale:pages', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+INSERT INTO `sys_menu` (`menu_id`, `parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`, `pc_showed`, `app_code`, `app_order_num`, `remark`, `sys_belong`) VALUES (730, 688, '导出报表', NULL, 'operation:workforceSale:exportExcel', 2, NULL, 0, 1, NULL, NULL, NULL, 'o2o');
+
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '719');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '720');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '721');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '722');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '723');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '724');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '725');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '726');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '727');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '728');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '729');
+INSERT INTO `sys_role_menu` (`role_id`, `menu_id`) VALUES ('1', '730');
+
 
 
 

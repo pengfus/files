@@ -1,7 +1,3 @@
-create database oao_operation;
-
-use oao_operation;
-
 create table plan_range
 (
     id            int auto_increment comment 'id'
@@ -272,3 +268,7 @@ create table store_task_group
 )
     comment '任务组';
 
+INSERT INTO `plan_range` (`id`, `organize_code`, `name`, `type`, `time`, `task_time`, `deleted`, `creator`,
+                          `create_time`, `updator`, `update_time`)
+VALUES (1, NULL, 'OFF班', 0, '休息', '', 0, 1, '2020-03-16 13:59:12', 35, '2020-03-21 11:38:21'),
+       (2, NULL, 'E班', -1, '请假', '', 0, 1, '2020-03-16 13:58:55', 1, '2020-03-21 11:38:24');
