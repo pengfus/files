@@ -4,7 +4,7 @@ create table sys_responsibility
 (
     responsibility_id   bigint auto_increment comment '职能ID'
         primary key,
-    respinsibility_name varchar(20)                        not null comment '职能名称',
+    responsobility_name varchar(20)                        not null comment '职能名称',
     unique_flag         tinyint  default 0                 not null comment '是否唯一，1：是，0：否',
     del_flag            tinyint  default 0                 not null comment '删除标识，1：删除，0：有效',
     creator             bigint                             not null,
