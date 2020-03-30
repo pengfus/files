@@ -12,7 +12,7 @@ alter table o2o.o2o_fran_store
 
 update o2o.o2o_fran_store fs ,o2o.o2o_erp_sys_organize o
 set fs.sender_tel =o.mobile
-WHERE fs.organize_code = organize_code;
+WHERE fs.organize_code = o.organize_code;
 
 insert into o2o.sys_config (`key`, `value`, `status`, `remark`)
 values ('OPERATE_PLAN_PERIOD', 7, 1, '7,14,28');

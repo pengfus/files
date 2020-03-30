@@ -1,3 +1,7 @@
+create database oao_operation;
+
+use oao_operation;
+
 create table plan_range
 (
     id            int auto_increment comment 'id'

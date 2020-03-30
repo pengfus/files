@@ -7,7 +7,7 @@ set icon = 'fa fa-table'
 where name = '营运管理'
   and parent_id = 0;
 
-insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (818, 775, '完成任务', null, 'operation:tasks:status:patch', 2, null, 0, 1, null, null, null, 'o2o');
+insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (818, 775, '完成任务', null, 'operation:tasks:status:patch', 2, null, 0, 1, 'APP_MENU_OPERATION_TASK_', null, null, 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (817, 772, '导出任务完成情况', null, 'operation:task:definitions:details:groupByTaskIdCollectTime:excel,operation:task:groups:details:groupByTaskIdCollectTime:excel', 2, null, 0, 1, null, null, null, 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (816, 775, '删除收集数据', null, 'operation:tasks:details:delete', 2, null, 0, 1, 'APP_MENU_OPERATION_TASK_', null, null, 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (815, 775, '修改收集数据', null, 'operation:tasks:details:put', 2, null, 0, 1, 'APP_MENU_OPERATION_TASK_', null, null, 'o2o');
