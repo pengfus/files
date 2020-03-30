@@ -2,22 +2,26 @@ create database oao_operation;
 
 use oao_operation;
 
-create table plan_range
+CREATE TABLE `plan_range`
 (
-    id            int auto_increment comment 'id'
-        primary key,
-    organize_code varchar(20)                          null comment '组织机构编号',
-    name          varchar(50)                          not null comment '名称',
-    type          int        default 1                 not null comment '1上班 0休息 -1请假',
-    time          varchar(50)                          null comment '时间段,按先后顺序',
-    task_time     varchar(50)                          null comment '时间点',
-    deleted       tinyint(1) default 0                 not null comment '删除标识，1：删除，0：未删',
-    creator       bigint                               not null,
-    create_time   datetime   default CURRENT_TIMESTAMP not null,
-    updator       bigint                               not null,
-    update_time   datetime   default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP
+    `id`            INT(11)     NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `organize_code` VARCHAR(20) NULL     DEFAULT NULL COMMENT '组织机构编号',
+    `name`          VARCHAR(50) NOT NULL COMMENT '名称',
+    `type`          INT(11)     NOT NULL DEFAULT '1' COMMENT '1上班 0休息 -1请假',
+    `time`          VARCHAR(50) NULL     DEFAULT NULL COMMENT '时间段,按先后顺序',
+    `task_time`     VARCHAR(50) NULL     DEFAULT NULL COMMENT '时间点',
+    `deleted`       TINYINT(1)  NOT NULL DEFAULT '0' COMMENT '删除标识，1：删除，0：未删',
+    `creator`       BIGINT(20)  NOT NULL,
+    `create_time`   DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updator`       BIGINT(20)  NOT NULL,
+    `update_time`   DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
 )
-    comment '班次管理';
+    COMMENT ='班次管理'
+    COLLATE = 'utf8_general_ci'
+    ENGINE = InnoDB
+    AUTO_INCREMENT = 10000
+;
 
 create table plan_workforce
 (
