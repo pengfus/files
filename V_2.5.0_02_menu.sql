@@ -52,8 +52,6 @@ insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, orde
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (768, 554, '员工通讯录', 'modules/operationManage/heaStaffAddressList.html', null, 1, null, 8, 1, null, null, null, 'o2o');
 insert into o2o.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num, pc_showed, app_code, app_order_num, remark, sys_belong) values (766, 554, '门店职能配置', 'modules/operationManage/storeResponsibility.html', null, 1, null, 3, 1, null, null, null, 'o2o');
 
-select *
-from o2o.sys_menu order by menu_id desc;
 
 insert into o2o.sys_role_menu (menu_id,role_id) values (818,1);
 insert into o2o.sys_role_menu (menu_id,role_id) values (817,1);
